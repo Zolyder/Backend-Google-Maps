@@ -137,7 +137,7 @@ class ControllerCustomer {
       const db = await dbAccess(config.database)
       await db.User.bulkCreate(customers)
 
-      res.status(200).send(`Users created correctly`)
+      res.status(200).send('Users created correctly')
     } catch (error) {
       console.log('Message ', error)
       res.status(500).send(`Message ${error}`)
@@ -157,7 +157,7 @@ class ControllerCustomer {
       const db = await dbAccess(config.database)
       await db.User.create(customer)
 
-      res.status(200).send(`User created correctly`)
+      res.status(200).send('User created correctly')
     } catch (error) {
       console.log('Message ', error)
       res.status(500).send(`Message ${error}`)

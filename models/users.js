@@ -26,7 +26,7 @@ module.exports = function setupUser (config) {
     gender: {
       type: DataTypes.STRING
     },
-    company:{
+    company: {
       type: DataTypes.STRING
     },
     city: {

@@ -5,7 +5,7 @@ const initDatabase = require('./db')
 /* -----Setup Users----- */
 const setupUserModel = require('./users')
 /* Querys */
-const addUserQuery = require('./querys/users')
+// const addUserQuery = require('./querys/users')
 
 module.exports = async function setupDatabase (config) {
   const sequelizeDatabase = initDatabase(config)
