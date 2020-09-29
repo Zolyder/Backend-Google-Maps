@@ -1,6 +1,6 @@
 'use strict'
 
-const { initDatabase } = require('./db')
+const initDatabase = require('./db')
 
 /* -----Setup Users----- */
 const setupUserModel = require('./users')
@@ -12,7 +12,8 @@ module.exports = async function setupDatabase (config) {
 
   const UserModel = setupUserModel(config)
 
-  const User = addUserQuery(UserModel)
+  // const User = addUserQuery(UserModel)
+  const User = UserModel
 
   await sequelizeDatabase.authenticate()
 
