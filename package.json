@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "cross-env NODE_ENV=test jest --testTimeout=10000",
     "start": "nodemon index.js",
+    "migrate": "npx sequelize-cli db:migrate",
+    "migrate:reset": "npx sequelize-cli db:migrate:undo:all && npm run migrate",
+    "pretest": "cross-env NODE_ENV=test npm run migrate:reset",
     "lint": "standard",
     "lint:fix": "standard --fix"
   },
@@ -23,7 +26,6 @@
     "sequelize-cli": "^6.2.0"
   },
   "devDependencies": {
-    "cross-env": "^7.0.2",
     "jest": "^26.4.2",
     "nodemon": "^2.0.4",
     "standard": "^14.3.4",
